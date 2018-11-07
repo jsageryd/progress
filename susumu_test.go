@@ -2,8 +2,9 @@ package susumu_test
 
 import (
 	"fmt"
-	"github.com/jsageryd/susumu"
 	"time"
+
+	"github.com/jsageryd/susumu"
 )
 
 // This example shows a single progress bar rendering.
