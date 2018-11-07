@@ -2,6 +2,7 @@ package susumu_test
 
 import (
 	"fmt"
+	"os"
 	"time"
 
 	"github.com/jsageryd/susumu"
@@ -9,7 +10,7 @@ import (
 
 // This example shows a single progress bar rendering.
 func ExampleBar_Draw() {
-	b := &susumu.Bar{Width: 80, Max: 256, Position: 192, Unit: "KiB"}
+	b := &susumu.Bar{Width: 80, Max: 256, Position: 192, Unit: "KiB", Output: os.Stdout}
 	err := b.Draw()
 	if err != nil {
 		panic(err)

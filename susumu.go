@@ -4,7 +4,9 @@ package susumu
 import (
 	"errors"
 	"fmt"
+	"io"
 	"math"
+	"os"
 	"strings"
 )
 
@@ -14,6 +16,7 @@ type Bar struct {
 	Max      int
 	Position int
 	Unit     string
+	Output   io.Writer
 }
 
 var blocks = [9]rune{' ', '▏', '▎', '▍', '▌', '▋', '▊', '▉', '█'}
@@ -36,6 +39,10 @@ func (b *Bar) Draw() error {
 
 	bar := strings.Repeat(string(blocks[8]), blockCount) + string(blocks[lastBlockSize])
 	afterPadding := strings.Repeat(" ", totalBlockCount-blockCount)
-	fmt.Printf(" %3d%% %s%s"+posStringFormat+" / %d %s\r", percent, bar, afterPadding, b.Position, b.Max, b.Unit)
+	var output io.Writer = os.Stderr
+	if b.Output != nil {
+		output = b.Output
+	}
+	fmt.Fprintf(output, " %3d%% %s%s"+posStringFormat+" / %d %s\r", percent, bar, afterPadding, b.Position, b.Max, b.Unit)
 	return nil
 }
