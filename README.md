@@ -8,9 +8,6 @@ Susumu is a tiny progress bar package.
 - Settable width in characters
 - Smooth 1/8-char increments
 
-## Demo
-[![Susumu demo](https://asciinema.org/a/7e54gx2njw4mydhj1gve4tnel.png)](https://asciinema.org/a/7e54gx2njw4mydhj1gve4tnel?autoplay=1)
-
 ## Example
 ```go
 package main
