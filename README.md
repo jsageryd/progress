@@ -1,5 +1,5 @@
-# Susumu
-Susumu is a tiny progress bar package.
+# Progress
+Progress is a tiny progress bar package.
 
 ## Features
 - Arbitrary max value
@@ -15,11 +15,11 @@ package main
 import (
 	"fmt"
 
-	"github.com/jsageryd/susumu"
+	"github.com/jsageryd/progress"
 )
 
 func main() {
-	b := &susumu.Bar{Width: 80, Max: 256, Position: 128, Unit: "KiB"}
+	b := &progress.Bar{Width: 80, Max: 256, Position: 128, Unit: "KiB"}
 	err := b.Draw()
 	if err != nil {
 		panic(err)

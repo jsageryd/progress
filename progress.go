@@ -1,5 +1,5 @@
-// Package susumu implements a simple progress bar.
-package susumu
+// Package progress implements a simple progress bar.
+package progress
 
 import (
 	"errors"
